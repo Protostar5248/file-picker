@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 
+  </head>
+  <body>
+
+  
+
+
+
+
+
+    
+    <input type="file" name="client-file" id="input-files" multiple />
+    <div id="div-files"></div>
+
+    <script>
+    var inputElt = document.getElementById("input-files");
+    var divListFiles = document.getElementById("div-files")
+
+    inputElt.addEventListener('change', function(e) {
+      console.log(e.target.files)
+      var inputFiles = e.target.files
+
+      for (i = 0; i < inputFiles.length; i++) {
+          let file = inputFiles[i];
+          console.log(file);
+
+          const para = document.createElement("p");
+          para.innerText = file.name;
+          divListFiles.appendChild(para)
+            
+      }
+    })
+    </script>
+
+
+
+
+
+
+
+  </body>
+  
+  </html>
